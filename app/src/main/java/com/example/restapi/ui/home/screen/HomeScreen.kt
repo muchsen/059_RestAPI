@@ -26,9 +26,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.example.pakeapi.R
 import com.example.pakeapi.model.Kontak
 import com.example.pakeapi.ui.home.viewmodel.KontakUIState
+import com.example.restapi.R
+import com.example.restapi.navigasi.DestinasiNavigasi
 
 @Composable
 fun HomeScreen(
@@ -42,7 +43,7 @@ fun HomeScreen(
 
         is KontakUIState.Error -> OnError(retryAction, modifier = modifier.fillMaxSize())
     }
-}
+}n
 
 @Composable
 fun OnLoading(modifier: Modifier = Modifier){
@@ -125,4 +126,8 @@ fun KontakCard(
             )
         }
     }
+}
+object DestinasiHome : DestinasiNavigasi {
+    override val route = "home"
+    override val titleRes = "Kontak"
 }
